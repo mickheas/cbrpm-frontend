@@ -1,0 +1,7 @@
+{
+  "name": "City Building & Rental Property Management System",
+  "description": "Official digital platform for Addis Ababa City Administration (የአዲስ አበባ ከተማ አስተዳደር) to manage city buildings, rental properties, leases, arrears, maintenance, and resident services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

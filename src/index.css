@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', 'Noto Sans Ethiopic', 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Plus Jakarta Sans', 'Noto Sans Ethiopic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Noto Sans Ethiopic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Noto Sans Ethiopic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Noto Sans Ethiopic', 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Clean, Pure Visual Foundations */
+  --color-ink: #0D1714;       /* deep dark botanical slate text */
+  --color-slate: #526661;     /* neutral readable secondary text */
+  --color-base: #FFFFFF;      /* pure white primary background */
+  --color-subtle: #F6F9F8;    /* very soft clean contrast surface with subtle sage tone */
+  --color-surface: #FFFFFF;   /* clean card surface */
+  --color-line: #E2E8F0;      /* subtle hairline dividers and borders */
+
+  /* Primary Action & Accent — Aston Martin Royal Green */
+  --color-accent: #00594C;    /* Aston Martin royal green */
+  --color-accent-hover: #00473D;
+  --color-accent-dim: #E8F5F1;/* soft royal green highlight */
+
+  /* Real Process Status Colors */
+  --color-success: #16A34A;   /* verified, passed, approved */
+  --color-success-dim: #F0FDF4;
+  --color-warning: #D97706;   /* under verification, scheduled, pending */
+  --color-warning-dim: #FFFBEB;
+  --color-danger:  #DC2626;   /* rejected, action required */
+  --color-danger-dim:  #FEF2F2;
+  --color-info:    #00594C;   /* royal green notices */
+  --color-info-dim: #E8F5F1;
+
+  /* Restrained Elevation */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+}
+
+.dark {
+  /* True Pitch-Black Foundation (No bluish slate cast) */
+  --color-ink: #F4F6F5;
+  --color-slate: #9EABA6;
+  --color-base: #000000;      /* true pure black */
+  --color-subtle: #0A0A0A;    /* true dark tone surface */
+  --color-surface: #121212;   /* clean dark charcoal card */
+  --color-line: #1E1E1E;      /* crisp neutral dark border */
+
+  /* Dark Mode Royal Green Accents */
+  --color-accent: #00A38C;
+  --color-accent-hover: #00BAA0;
+  --color-accent-dim: #04231E;
+
+  --color-success: #22C55E;
+  --color-success-dim: #052E16;
+  --color-warning: #F59E0B;
+  --color-warning-dim: #451A03;
+  --color-danger:  #EF4444;
+  --color-danger-dim:  #450A0A;
+  --color-info:    #00A38C;
+  --color-info-dim: #04231E;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.8);
+}
+
+@layer base {
+  *, ::before, ::after {
+    font-family: var(--font-sans);
+  }
+  html {
+    color-scheme: light;
+    background-color: var(--color-base);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body, button, input, select, textarea {
+    font-family: var(--font-sans);
+    background-color: var(--color-base);
+    color: var(--color-ink);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading) !important;
+    color: var(--color-ink);
+    letter-spacing: -0.025em;
+  }
+}
+
+.font-display, .font-serif, .font-heading {
+  font-family: var(--font-heading) !important;
+  letter-spacing: -0.02em;
+}
+
+.font-sans, .font-body {
+  font-family: var(--font-sans) !important;
+}
+
+.font-mono, .font-mono-num {
+  font-family: var(--font-mono) !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-slate);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.civic-btn-press {
+  transition: transform 120ms ease-out, background-color 120ms ease-out, border-color 120ms ease-out;
+}
+.civic-btn-press:active {
+  transform: scale(0.985);
+}
